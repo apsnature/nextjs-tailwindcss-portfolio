@@ -1,11 +1,12 @@
 import { useState } from 'react';
+import { React } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FiSun, FiMoon, FiX, FiMenu } from 'react-icons/fi';
 import HireMeModal from '../HireMeModal';
-import logoLight from '../../public/images/logo-light.svg';
-import logoDark from '../../public/images/logo-dark.svg';
+import logoLight from '../../public/images/DevStrim_Logo-dark.png';
+import logoDark from '../../public/images/logo-light-devestrim.svg';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
 
 function AppHeader() {
@@ -36,6 +37,8 @@ function AppHeader() {
 	}
 
 	return (
+		<>
+			<div>
 		<motion.nav
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
@@ -133,7 +136,7 @@ function AppHeader() {
 							className="font-general-medium sm:hidden block text-left text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-sm px-4 py-2 mt-2 duration-300 w-24"
 							aria-label="Hire Me Button"
 						>
-							Hire Me
+									Hire Us
 						</button>
 					</div>
 				</div>
@@ -169,7 +172,7 @@ function AppHeader() {
 							className="text-md font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300"
 							aria-label="Hire Me Button"
 						>
-							Hire Me
+									Hire Us
 						</button>
 					</div>
 
@@ -197,6 +200,9 @@ function AppHeader() {
 				{showModal ? showHireMeModal : null}
 			</div>
 		</motion.nav>
+			</div>
+
+		</>
 	);
 }
 

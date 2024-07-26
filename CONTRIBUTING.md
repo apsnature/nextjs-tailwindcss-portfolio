@@ -1,4 +1,4 @@
-# Contributing
+<!-- # Contributing
 
 Thank you for considering to contribute to `nextjs-tailwindcss-portfolio` 💖
 
@@ -17,4 +17,4 @@ Please note that this project is released with a [Code of Conduct](https://githu
 
 ### If the issue is new, add the code to the fork of the repository and then create a pull request
 
-### Add Feat or Fix to the pull request title so maintainer understand what this issue is
+### Add Feat or Fix to the pull request title so maintainer understand what this issue is -->

@@ -1,19 +1,22 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import Image from 'next/image';
 import { FiArrowDownCircle } from 'react-icons/fi';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
 
 function AppBanner() {
 	const [activeTheme] = useThemeSwitcher();
+	const [isDarkMode, setIsDarkMode] = useState(false);
 
 	return (
+		<div>
 		<motion.section
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-			className="flex flex-col sm:justify-between items-center sm:flex-row mt-5 md:mt-2"
+				className="flex flex-col sm:justify-between items-center sm:flex-row mt-2 md:mt-2"
 		>
-			<div className="w-full md:w-1/3 text-left">
+				<div className="w-full md:w-1/3 text-left" >
 				<motion.h1
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
@@ -24,7 +27,17 @@ function AppBanner() {
 					}}
 					className="font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase"
 				>
-					Hi, Iam Stoman
+
+
+
+						<Image className="text-center" alt="logo Devstrim" width={300} height={100}
+							layout="responsive"
+							src={isDarkMode ? '/images/Logo-DevStrim.png' : '/images/DevStrim_Logo-dark.png'}
+						/>
+
+
+
+
 				</motion.h1>
 				<motion.p
 					initial={{ opacity: 0 }}
@@ -34,9 +47,9 @@ function AppBanner() {
 						duration: 0.9,
 						delay: 0.2,
 					}}
-					className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200"
+						className="font-general-medium mt-2 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200"
 				>
-					A Full-Stack Developer & Design Enthusiast
+						Crafting Future-Ready Digital Experiences with Cutting-Edge Web Development, Generative AI, and Expert Design Solutions.
 				</motion.p>
 				<motion.div
 					initial={{ opacity: 0 }}
@@ -56,18 +69,22 @@ function AppBanner() {
 					>
 						<FiArrowDownCircle className="ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100"></FiArrowDownCircle>
 						<span className="text-sm sm:text-lg duration-100">
-							Download CV
+								Company Profile
 						</span>
 					</a>
 				</motion.div>
 			</div>
+
+
+
+
 			<motion.div
 				initial={{ opacity: 0, y: -180 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-				className="w-full sm:w-2/3 text-right float-right mt-8 sm:mt-0"
+					className="w-full sm:w-2/3   text-right float-right mt-8 sm:mt-0"
 			>
-				<img
+					<Image height={100} width={100}
 					layout="responsive"
 					src={
 						activeTheme === 'dark'
@@ -78,6 +95,7 @@ function AppBanner() {
 				/>
 			</motion.div>
 		</motion.section>
+		</div>
 	);
 }
 
